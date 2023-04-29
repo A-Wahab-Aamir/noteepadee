@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NotePad**</title>
+    <style>
+      table {
+        width: 100%;
+
+        text-align: center;
+        font-weight: bold;
+        /* background-color: aquamarine; */
+        background-image: linear-gradient(white, blue);
+      }
+      table tr td {
+      }
+      #w {
+        font-size: 18px;
+      }
+      textarea {
+        border: 5px solid black;
+        border-radius: 10px;
+        width: 800px;
+        height: 300px;
+      }
+      .but {
+        border: 0px;
+        background: none;
+        font-size: 20px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      function C() {
+        let text = document.getElementById("w").value.length;
+        document.getElementById("para").innerHTML = "Total Character: " + text;
+      }
+      function B() {
+        let text = (document.getElementById("w").style.fontWeight = "bold");
+      }
+      function I() {
+        let text = (document.getElementById("w").style.fontStyle = "italic");
+      }
+      function U() {
+        let text = (document.getElementById("w").style.textDecoration =
+          "underline");
+      }
+      function Color() {
+        let c1 = document.getElementById("col").value;
+        let text = (document.getElementById("w").style.color = c1);
+      }
+      function Back() {
+        let c1 = document.getElementById("back").value;
+        let text = (document.getElementById("w").style.backgroundColor = c1);
+      }
+      function cen() {
+        let text = (document.getElementById("w").style.textAlign = "center");
+      }
+      function left() {
+        let text = (document.getElementById("w").style.textAlign = "left");
+      }
+      function rig() {
+        let text = (document.getElementById("w").style.textAlign = "right");
+      }
+      function reset() {
+        location.reload();
+      }
+      function font() {
+        let text = document.getElementById("w").style;
+        let sel = document.getElementById("font").value;
+        if (sel == "t1") {
+          text.fontSize = "10px";
+        }
+        if (sel == "t2") {
+          text.fontSize = "20px";
+        }
+        if (sel == "t3") {
+          text.fontSize = "30px";
+        }
+        if (sel == "t4") {
+          text.fontSize = "40px";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <table cellspacing="10" border="0">
+      <tr>
+        <td>
+          <h1><b>NotePaD**</b></h1>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" value="Set Font" onclick="font()" class="but" />
+          <select id="font">
+            <option value="t1">10</option>
+            <option value="t2">20</option>
+            <option value="t3">30</option>
+            <option value="t4">40</option>
+          </select>
+          <input type="button" value="Bold" onclick="B()" class="but" />
+          <input type="button" value="Italic" onclick="I()" class="but" />
+          <input type="button" value="Underline" onclick="U()" class="but" />
+          <input type="button" value="Count Words" onclick="C()" class="but" />
+          <input type="color" id="col" />
+          <input type="button" value="Color" onclick="Color()" class="but" />
+          <input type="color" id="back" />
+          <input type="button" value="BgColor" onclick="Back()" class="but" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <textarea
+            cols="80"
+            rows="10"
+            id="w"
+            placeholder="Type Text Here"
+          ></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="/left-text-alignment-option.png"
+            width="30"
+            onclick="left()"
+            style="cursor: pointer"
+          />
+          &nbsp;&nbsp;&nbsp;
+          <img
+            src="/justify.png"
+            alt=""
+            width="30"
+            onclick="cen()"
+            style="cursor: pointer"
+          />&nbsp;&nbsp;&nbsp;
+          <img
+            src="/align-right.png"
+            alt=""
+            width="30"
+            onclick="rig()"
+            style="cursor: pointer"
+          />&nbsp;&nbsp;&nbsp;
+          <img
+            src="/undo-arrow.png"
+            alt=""
+            width="30"
+            onclick="reset()"
+            style="cursor: pointer"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p id="para"></p>
+          <br />
+          <p id="para_1"></p>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
